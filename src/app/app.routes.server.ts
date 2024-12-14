@@ -1,8 +1,13 @@
-import { RenderMode, ServerRoute } from '@angular/ssr';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-export const serverRoutes: ServerRoute[] = [
-  {
-    path: '**',
-    renderMode: RenderMode.Prerender
-  }
+const routes: Routes = [
+  // Add your app routes here
+  // Example: { path: 'home', component: HomeComponent }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+})
+export class AppRoutingModule {}
