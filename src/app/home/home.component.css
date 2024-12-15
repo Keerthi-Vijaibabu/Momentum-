@@ -4,3 +4,7 @@ p{
   color: #333; /* Dark gray text color */
   margin-bottom: 16px; /* Adds spacing below paragraphs */
 }
+
+body{
+  background-color: #000;
+}

@@ -1,0 +1,29 @@
+body {
+    background-color: #1c2b36; /* Dark background for a calming look */
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar-brand, .nav-link {
+    font-size: 1.5rem;
+  }
+  
+  h1, h2 {
+    color: #E8E8E8; /* Soft white text for titles */
+  }
+  
+  hr {
+    border: none;
+    height: 3px;
+    background-color: #E8E8E8;
+  }
+  
+  .bg-secondary {
+    background-color: #354f5c !important; /* Slightly lighter shade for card backgrounds */
+    border-radius: 8px;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+  
