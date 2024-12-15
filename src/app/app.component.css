@@ -40,9 +40,16 @@ body {
   color: #e8eddf;
  }
 
+/*GOOGLE FONTS*/
 .playwrite-dk-100 {
   font-family: "Playwrite DK Uloopet", cursive;
   font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.macondo-regular {
+  font-family: "Macondo", cursive;
   font-weight: 400;
   font-style: normal;
 }
@@ -59,3 +66,4 @@ body {
   margin: 0 10px; 
   border-radius: 10px;
 }
+
