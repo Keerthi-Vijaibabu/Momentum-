@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1117; /* GitHub dark theme background */
+  }
+  
+  .card {
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .form-control {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #e8eddf;
+  }
+  
+  .form-control:focus {
+    box-shadow: none;
+    border-color: #58a6ff;
+    background-color: #0d1117;
+    color: #e8eddf;
+  }
+  
+  .btn-success {
+    background-color: #238636;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    background-color: #2ea043;
+  }
+  
+  .playwrite-dk-100 {
+    font-family: "Playwrite DK Uloopet", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  
+.macondo-regular {
+    font-family: "Macondo", cursive;
+    font-weight: 400;
+    font-style: normal;
+    }
