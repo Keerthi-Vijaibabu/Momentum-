@@ -12,8 +12,7 @@ import { Auth, signInWithEmailAndPassword, getAuth } from '@angular/fire/auth';
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  private auth: Auth = inject(Auth); // Inject Firebase Auth instance
-
+  constructor(private auth: Auth) {}
   login() {
     signInWithEmailAndPassword(this.auth, this.email, this.password)
       .then(userCredential => {
