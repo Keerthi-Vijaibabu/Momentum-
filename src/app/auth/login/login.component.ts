@@ -6,22 +6,7 @@ import { Auth, signInWithEmailAndPassword, getAuth } from '@angular/fire/auth';
 @Component({
   selector: 'app-login',
   standalone: true,
-  template: `
-    <div class="container mt-5">
-      <h2>Login</h2>
-      <form (ngSubmit)="login()">
-        <div class="mb-3">
-          <label>Email</label>
-          <input type="email" [(ngModel)]="email" name="email" class="form-control" required />
-        </div>
-        <div class="mb-3">
-          <label>Password</label>
-          <input type="password" [(ngModel)]="password" name="password" class="form-control" required />
-        </div>
-        <button type="submit" class="btn btn-primary">Login</button>
-      </form>
-    </div>
-  `,
+  templateUrl: './login.component.html',
   imports: [CommonModule, FormsModule],
 })
 export class LoginComponent {
