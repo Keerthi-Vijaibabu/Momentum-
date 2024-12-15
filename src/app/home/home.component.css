@@ -1,10 +1,73 @@
-p{
-  font-size: 16px;
-  line-height: 1.6; /* Improves readability */
-  color: #333; /* Dark gray text color */
-  margin-bottom: 16px; /* Adds spacing below paragraphs */
+body {
+  background-color: #1c2b36; /* Dark background for a calming look */
+  font-family: Arial, sans-serif;
 }
 
-body{
-  background-color: #000;
+.navbar-brand, .nav-link {
+  font-size: 1.5rem;
+}
+
+h1, h2 {
+  color: #E8E8E8; /* Soft white text for titles */
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-color: #E8E8E8;
+}
+
+.bg-secondary {
+  background-color: #0c1e28 !important; /* Slightly lighter shade for card backgrounds */
+  border-radius: 8px;
+}
+
+p {
+  margin: 0;
+  font-size: 1rem;
+  color: #e8eddf;
+}
+
+.back{
+  background-color: #1c3041;
+}
+
+.headerText{
+  color: #ec9192;
+}
+
+.font-main{
+color: #e8eddf;
+}
+
+/*GOOGLE FONTS*/
+.playwrite-dk-100 {
+font-family: "Playwrite DK Uloopet", cursive;
+font-optical-sizing: auto;
+font-weight: 400;
+font-style: normal;
+}
+
+.macondo-regular {
+font-family: "Macondo", cursive;
+font-weight: 400;
+font-style: normal;
+}
+
+.logo {
+width: 100px;
+height: auto;
+}
+
+.cards{
+background-color: #1c2b36;
+opacity: 70%;
+padding: 20px;
+margin: 0 10px; 
+border-radius: 10px;
+}
+
+.footer{
+padding-bottom: 0;
+padding-top: 10px;
 }
