@@ -8,11 +8,15 @@
 <body class = "back">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
     <img src="assets/logo.png" class="img-fluid logo" alt="Logo">
-    <a class="navbar-brand fw-bold headerText fs-2 playwrite-dk-100" routerLink = "/home" routerLinkActive="active">Momentum</a>
-    <div class="ms-auto">
-      <a class="nav-link headerText  fs-6" routerLink = "/login" routerLinkActive="active">Login|Sign Up</a>
+    <a class="navbar-brand fw-bold headerText fs-2 playwrite-dk-100" routerLink="/home" routerLinkActive="active">Momentum</a>
+    
+    <div class="ms-auto d-flex align-items-center">
+      <a class="nav-link headerText fs-6 me-2" routerLink="/login" routerLinkActive="active">Login</a>
+      <span class="text-light mx-1">|</span>
+      <a class="nav-link headerText fs-6 ms-2" routerLink="/signup" routerLinkActive="active">Sign Up</a>
     </div>
   </nav>
+  
 <router-outlet></router-outlet>
 <!-- Footer -->
 <footer class="footer text-center text-secondary mt-5 mb-3 fixed-bottom bg-dark">

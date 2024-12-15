@@ -1,15 +1,86 @@
-<div class="container mt-5">
-    <h2>Register</h2>
-    <form (ngSubmit)="register()">
+<!--<div class="container mt-5">
+  <h2>Sign Up</h2>
+  <form (submit)="signup()">
+    <div class="mb-3">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="email" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label>Password</label>
+      <input type="password" [(ngModel)]="password" class="form-control" required />
+    </div>
+    <div class="mb-3">
+      <label>Confirm Password</label>
+      <input type="password" [(ngModel)]="confirmPassword" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Sign Up</button>
+  </form>
+</div>
+-->
+<head>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Macondo&family=Playwrite+DE+VA+Guides&family=Playwrite+DK+Uloopet:wght@100..400&display=swap');
+   </style>
+</head>
+<body>
+<div class="d-flex justify-content-center align-items-center vh-100 bg-dark">
+  <div class="card p-4 shadow-lg" style="width: 24rem; background-color: #1c3041; color: #ffffff;">
+    <!-- Logo -->
+    <div class="text-center mb-4">
+      <img src="assets/logo.png" alt="Logo" style="width: 60px; height: 60px;" />
+    </div>
+    <!-- Title -->
+     <h4 class="text-center mb-4 fw-bold">
+      Sign in to <span style="color: #ec9192;" class="macondo-regular">Momentum</span>
+      </h4>
+
+    <!-- Form -->
+    <form (submit)="signup()">
       <div class="mb-3">
-        <label>Email</label>
-        <input type="email" [(ngModel)]="email" name="email" class="form-control" required />
+        <label for="email" class="form-label">Username or email address</label>
+        <input
+        [(ngModel)]="email"
+        type="email"
+        id="email"
+        class="form-control"
+        placeholder="Enter your email"
+      />
       </div>
+
       <div class="mb-3">
-        <label>Password</label>
-        <input type="password" [(ngModel)]="password" name="password" class="form-control" required />
+        <div class="d-flex justify-content-between">
+          <label for="password" class="form-label">Password</label>
+        </div>
+        <input
+        [(ngModel)]="password"
+        type="password"
+        id="password"
+        class="form-control"
+        placeholder="Enter your password"
+      />
       </div>
-      <button type="submit" class="btn btn-success">Register</button>
+
+      <div class="mb-3">
+        <div class="d-flex justify-content-between">
+          <label for="password" class="form-label">Confirm Password</label>
+        </div>
+        <input
+        [(ngModel)]="confirmPassword"
+        type="password"
+        id="password"
+        class="form-control"
+        placeholder="Enter your password"
+      />
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-success fw-bold">Sign up</button>
+      </div>
+      
+      
     </form>
+    
   </div>
-  
+</div>
+</body> 
