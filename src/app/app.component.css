@@ -18,7 +18,7 @@ body {
   }
   
   .bg-secondary {
-    background-color: #354f5c !important; /* Slightly lighter shade for card backgrounds */
+    background-color: #0c1e28 !important; /* Slightly lighter shade for card backgrounds */
     border-radius: 8px;
   }
   
@@ -67,3 +67,7 @@ body {
   border-radius: 10px;
 }
 
+.footer{
+  padding-bottom: 0;
+  padding-top: 10px;
+}
