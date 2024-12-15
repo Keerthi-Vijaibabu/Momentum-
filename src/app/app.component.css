@@ -25,5 +25,37 @@ body {
   p {
     margin: 0;
     font-size: 1rem;
+    color: #e8eddf;
   }
   
+ .back{
+    background-color: #1c3041;
+ }
+
+ .headerText{
+    color: #ec9192;
+ }
+
+ .font-main{
+  color: #e8eddf;
+ }
+
+.playwrite-dk-100 {
+  font-family: "Playwrite DK Uloopet", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+}
+
+.cards{
+  background-color: #1c2b36;
+  opacity: 70%;
+  padding: 20px;
+  margin: 0 10px; 
+  border-radius: 10px;
+}
