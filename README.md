@@ -1,6 +1,11 @@
 # Momentum
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.5.
+This project makes use of the following google techs:
+- Firebase Authentication
+- Firestore DataBase
+- Angular
+- Google form
 
 ## Development server
 
