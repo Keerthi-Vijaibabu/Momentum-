@@ -3,7 +3,7 @@
   <h2 class="fw-bold text-light mb-4">Momentum</h2>
   <ul class="nav flex-column">
     <li class="nav-item mb-3">
-      <a class="nav-link text-light" routerLink ="#">TASK</a>
+      <a class="nav-link text-light" routerLink ="/task">TASK</a>
     </li>
     <li class="nav-item mb-3">
       <a class="nav-link text-light" routerLink = '/timer'>POMODORO TIMER</a>
@@ -15,6 +15,7 @@
 </nav>
 
 <div class="timer-container" >
+  <router-outlet></router-outlet>
   <!-- Tab Navigation -->
    <div style = "margin-top: 60px;">
   <div class="timer-tabs d-flex justify-content-center" >
@@ -42,6 +43,7 @@
   </div>
 
   <!-- Timer Display -->
+   <router-outlet></router-outlet>
   <div class="timer-display text-center">
     <h1>{{ displayTime }}</h1>
   </div>

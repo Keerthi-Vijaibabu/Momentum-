@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
+
 @Component({
   selector: 'app-timer',
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.css'],
+  imports: [RouterLink, RouterOutlet]
 })
 export class TimerComponent {
   currentMode: string = 'pomodoro'; // Modes: pomodoro, short, long

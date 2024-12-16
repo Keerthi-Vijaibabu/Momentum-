@@ -101,3 +101,62 @@
     height: 100vh;
     position: fixed;
   }
+
+  /* Updated Task Container */
+.task-container {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: #181818;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    position: relative;
+}
+
+/* Task Item */
+.task-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.task-status {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.task-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.task-name {
+    font-weight: bold;
+    color: #e4e4e4;
+}
+
+.task-date {
+    font-size: 0.8rem;
+    color: #bbb;
+}
+
+/* Floating Add Button */
+.add-task-btn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #4da3ff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}

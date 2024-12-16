@@ -3,13 +3,14 @@ import { TaskService, Task } from './tasks.service';
 import { Auth, user } from '@angular/fire/auth';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-tasks',
   standalone: true,
   templateUrl: './tasks.component.html',
   styleUrls: ['./tasks.component.css'],
-  imports: [CommonModule]
+  imports: [CommonModule, RouterLink, RouterOutlet]
 })
 export class TasksComponent implements OnInit {
   tasks$: Observable<Task[]> | null = null;

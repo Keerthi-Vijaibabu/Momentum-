@@ -12,30 +12,18 @@
       </li>
     </ul>
   </nav>
-
-<div class="task-container">
-    <div class="header">Your Tasks</div>
-    <table class="task-table">
-      <thead>
-        <tr>
-          <th>Status</th>
-          <th>Project</th>
-          <th>Priority</th> 
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let task of tasks$ | async">
-          <td>
-            <span class="status status-not-started">{{ task.status }}</span>
-          </td>
-          <td class="project-name">{{ task.name }}</td>
-          <td>
-            <span class="priority" [ngClass]="getPriorityClass(task.priority)">
-              {{ task.priority }}
-            </span>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+<router-outlet></router-outlet>
+  <div class="task-container">
+    <h3 class="header mb-4">Your Tasks</h3>
+    <div *ngFor="let task of tasks$ | async" class="task-item">
+        <span class="task-status"></span> <!-- Circle Indicator -->
+        <div class="task-content">
+            <div class="task-name">{{ task.name }}</div>
+            <div class="task-date">
+                <!--<span class="icon">📅</span> {{ task.dueDate || 'No date' }}-->
+            </div>
+        </div>
+    </div>
+    <!-- Floating Add Button -->
+    <button class="add-task-btn" routerLink = "/add-task">+</button>
+</div>

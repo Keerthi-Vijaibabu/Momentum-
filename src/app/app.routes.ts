@@ -6,6 +6,7 @@ import { TimerComponent } from './timer/timer.component';
 import { MainComponent } from './main/main.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { AuthGuard } from '../app/auth/auth.gaurd';
+import { AddTaskComponent } from './tasks/add-task/add-task.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -16,6 +17,7 @@ export const routes: Routes = [
   {path:'task', component:TasksComponent},
   {path:'main', component: MainComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: '' },
+  { path: 'add-task', component: AddTaskComponent },
 ];
 
 
