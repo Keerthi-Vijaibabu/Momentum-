@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "E:/dist/momentum",
+    "public": "dist/momentum",
     "ignore": [
       "firebase.json",
       "**/.*",
