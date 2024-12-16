@@ -15,13 +15,18 @@ export class LoginComponent {
   password: string = '';
   constructor(private auth: Auth) {}
   login() {
+    
+
     signInWithEmailAndPassword(this.auth, this.email, this.password)
+    
     .then((userCredential) => {
       console.log('Login successful:', userCredential);
+      console.log({ email: this.email, password: this.password });
       alert('Login Successful!');
     })
     .catch((error) => {
       console.error('Login failed:', error.message);
+      console.log({ email: this.email, password: this.password });
       alert('Login Failed: ' + error.message);
     });
 }

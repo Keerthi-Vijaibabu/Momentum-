@@ -14,11 +14,8 @@ import { provideHttpClient } from '@angular/common/http';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes),
-    provideFirebaseApp(() => initializeApp(environment.firebase)), // Initialize Firebase
-    provideAuth(() => getAuth()),
-    //provideHttpClient(),
-    //{ provide: AuthService, useClass: AuthService },
-     // Auth module
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()), // Provide the Auth service here
+    provideRouter(routes)
   ],
 }).catch(err => console.error(err));
