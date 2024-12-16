@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+  }
+  
+  .container-fluid {
+    margin-left: 200px;
+    background-color: #001f3f;
+  }
+  
+  .border {
+    border: 2px solid #ec9192;
+  }
+
+  .body-color{
+    background-color: #1c2b36;
+  }
+
+  .text{
+    color: #E8E8E8;
+  }

@@ -1,67 +1,58 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-timer',
-  standalone: true,
   templateUrl: './timer.component.html',
   styleUrls: ['./timer.component.css'],
-  imports: [CommonModule],
 })
 export class TimerComponent {
-  workTime: number = 25 * 60; // 25 minutes in seconds
-  breakTime: number = 5 * 60; // 5 minutes in seconds
-  currentTime: number = this.workTime; // Start with work time
-  timerStatus: string = 'Work Time'; // Work or Break Time
-  isRunning: boolean = false; // Timer state
-  interval: any; // Reference to the interval
+  currentMode: string = 'pomodoro'; // Modes: pomodoro, short, long
+  timeInSeconds: number = 25 * 60; // Default: 25 minutes
+  displayTime: string = '25:00';
+  isRunning: boolean = false;
+  timer: any;
 
-  // Format time in mm:ss
-  formatTime(seconds: number): string {
-    const minutes = Math.floor(seconds / 60);
-    const remainingSeconds = seconds % 60;
-    return `${minutes.toString().padStart(2, '0')}:${remainingSeconds
+  // Task Information
+  taskNumber: number = 1;
+  taskName: string = 'jhu';
+
+  // Set mode: Pomodoro, Short Break, Long Break
+  setMode(mode: string) {
+    this.currentMode = mode;
+    this.isRunning = false;
+    clearInterval(this.timer);
+
+    if (mode === 'pomodoro') this.timeInSeconds = 25 * 60;
+    else if (mode === 'short') this.timeInSeconds = 5 * 60;
+    else if (mode === 'long') this.timeInSeconds = 15 * 60;
+
+    this.updateDisplay();
+  }
+
+  // Toggle Timer Start/Pause
+  toggleTimer() {
+    if (this.isRunning) {
+      clearInterval(this.timer);
+    } else {
+      this.timer = setInterval(() => {
+        if (this.timeInSeconds > 0) {
+          this.timeInSeconds--;
+          this.updateDisplay();
+        } else {
+          clearInterval(this.timer);
+          alert('Time is up!');
+        }
+      }, 1000);
+    }
+    this.isRunning = !this.isRunning;
+  }
+
+  // Update Timer Display
+  updateDisplay() {
+    const minutes = Math.floor(this.timeInSeconds / 60);
+    const seconds = this.timeInSeconds % 60;
+    this.displayTime = `${minutes.toString().padStart(2, '0')}:${seconds
       .toString()
       .padStart(2, '0')}`;
-  }
-
-  // Start the timer
-  startTimer() {
-    if (this.isRunning) return; // Prevent multiple intervals
-    this.isRunning = true;
-    this.interval = setInterval(() => {
-      if (this.currentTime > 0) {
-        this.currentTime--;
-      } else {
-        this.toggleTimer();
-      }
-    }, 1000);
-  }
-
-  // Pause the timer
-  pauseTimer() {
-    clearInterval(this.interval);
-    this.isRunning = false;
-  }
-
-  // Reset the timer
-  resetTimer() {
-    clearInterval(this.interval);
-    this.isRunning = false;
-    this.currentTime = this.timerStatus === 'Work Time' ? this.workTime : this.breakTime;
-  }
-
-  // Toggle between Work and Break time
-  toggleTimer() {
-    clearInterval(this.interval);
-    this.isRunning = false;
-    if (this.timerStatus === 'Work Time') {
-      this.timerStatus = 'Break Time';
-      this.currentTime = this.breakTime;
-    } else {
-      this.timerStatus = 'Work Time';
-      this.currentTime = this.workTime;
-    }
-    this.startTimer(); // Automatically start the next session
   }
 }

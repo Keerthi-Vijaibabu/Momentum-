@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
+import { Router, RouterOutlet, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-main',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './main.component.html',
-  styleUrl: './main.component.css'
+  styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
+  userName: string = 'User'; // You can dynamically load this after login
 
+  constructor(private router: Router) {}
+
+  // Navigate to Login
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
 }

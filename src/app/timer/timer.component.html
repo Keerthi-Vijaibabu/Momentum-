@@ -1,11 +1,44 @@
-<div class="container text-center mt-5">
-    <h2>{{ timerStatus }}</h2>
-    <h1 class="display-4">{{ formatTime(currentTime) }}</h1>
-  
-    <div class="d-flex justify-content-center gap-3 mt-3">
-      <button class="btn btn-primary" (click)="startTimer()">Start</button>
-      <button class="btn btn-warning" (click)="pauseTimer()">Pause</button>
-      <button class="btn btn-danger" (click)="resetTimer()">Reset</button>
-    </div>
+<div class="timer-container" style = "margin-top: 60px;">
+  <!-- Tab Navigation -->
+  <div class="timer-tabs d-flex justify-content-center">
+    <button
+      class="tab-btn"
+      [class.active]="currentMode === 'pomodoro'"
+      (click)="setMode('pomodoro')"
+    >
+      Pomodoro
+    </button>
+    <button
+      class="tab-btn"
+      [class.active]="currentMode === 'short'"
+      (click)="setMode('short')"
+    >
+      Short Break
+    </button>
+    <button
+      class="tab-btn"
+      [class.active]="currentMode === 'long'"
+      (click)="setMode('long')"
+    >
+      Long Break
+    </button>
   </div>
-  
+
+  <!-- Timer Display -->
+  <div class="timer-display text-center">
+    <h1>{{ displayTime }}</h1>
+  </div>
+
+  <!-- Start Button -->
+  <div class="text-center mt-3">
+    <button class="start-btn" (click)="toggleTimer()">
+      {{ isRunning ? 'PAUSE' : 'START' }}
+    </button>
+  </div>
+
+  <!-- Task Display -->
+  <div class="task-section text-center mt-4">
+    <p class="task-number">#{{ taskNumber }}</p>
+    <p class="task-name">{{ taskName }}</p>
+  </div>
+</div>

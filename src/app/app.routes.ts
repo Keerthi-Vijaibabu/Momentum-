@@ -3,6 +3,7 @@ import { LoginComponent } from '../app/auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from '../app/home/home.component';
 import { TimerComponent } from './timer/timer.component';
+import { MainComponent } from './main/main.component';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -10,4 +11,5 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   {path:'timer', component: TimerComponent},
+  {path:'main', component: MainComponent},
 ];

@@ -1,1 +1,52 @@
-<p>main works!</p>
+<div class="d-flex">
+    <!-- Sidebar -->
+    <nav class="bg-dark text-light p-3 sidebar">
+      <h2 class="fw-bold text-light mb-4">Momentum</h2>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-3">
+          <a class="nav-link text-light" routerLink ="#">TASK</a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link text-light" routerLink = '/timer'>POMODORO TIMER</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">PRODUCTIVITY STATS</a>
+        </li>
+      </ul>
+    </nav>
+  <router-outlet></router-outlet>
+    <!-- Main Content -->
+    <div class="container-fluid p-5 text-light body-color">
+      <h1 class="text-center mb-4 text">Welcome, {{ userName }}!</h1>
+  
+      <!-- Buttons -->
+      <div class="row text-center mb-5 text">
+        <div class="col-md-6">
+          <div class="border p-4 rounded bg-dark">
+            <h3>Create Task</h3>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="border p-4 rounded bg-dark">
+            <h3>Start a Timer</h3>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Productivity Stats -->
+      <div class="row">
+        <div class="col">
+          <div class="border p-4 rounded bg-dark">
+            <h3 class="text-center mb-3 text">Productivity Stats</h3>
+            <canvas id="statsChart"></canvas>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Logout Button -->
+      <div class="text-center mt-4">
+        <button class="btn" style="background-color: #ec9192; color: #E8E8E8;" (click)="goToLogin()">Logout</button>
+      </div>
+    </div>
+  </div>
+  
