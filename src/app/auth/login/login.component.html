@@ -18,14 +18,8 @@
       <!-- Form -->
       <form (submit)="login()">
         <div class="mb-3">
-          <label for="email" class="form-label">Username or email address</label>
-          <input
-          [(ngModel)]="email"
-          type="email"
-          id="email"
-          class="form-control"
-          placeholder="Enter your email"
-        />
+          <label for="email" class="form-label">Email address</label>
+          <input type="email" id="email" [(ngModel)]="email" name="email" class="form-control" placeholder="Email" required />
         </div>
   
         <div class="mb-3">
@@ -33,13 +27,7 @@
             <label for="password" class="form-label">Password</label>
             <!--<a href="#" class="text-info small">Forgot password?</a>-->
           </div>
-          <input
-          [(ngModel)]="password"
-          type="password"
-          id="password"
-          class="form-control"
-          placeholder="Enter your password"
-        />
+          <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password" required />
         </div>
   
         <!-- Submit Button -->

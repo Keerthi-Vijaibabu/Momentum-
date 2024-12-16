@@ -1,6 +1,6 @@
 export const environment = {
     production: true,
-    firebase: {
+    firebaseConfig: {
       apiKey: "AIzaSyBh1Is7CIykMy9OI3_z9h3q0gjj0tFGcQk",
   authDomain: "momentum-687f5.firebaseapp.com",
   projectId: "momentum-687f5",

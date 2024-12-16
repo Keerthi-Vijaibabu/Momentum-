@@ -42,6 +42,7 @@
         [(ngModel)]="email"
         type="email"
         id="email"
+        name = "email"
         class="form-control"
         placeholder="Enter your email"
       />
@@ -51,26 +52,14 @@
         <div class="d-flex justify-content-between">
           <label for="password" class="form-label">Password</label>
         </div>
-        <input
-        [(ngModel)]="password"
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Enter your password"
-      />
+        <input type="password" id="password" [(ngModel)]="password" name="password" class="form-control" placeholder="Password" required />
       </div>
 
       <div class="mb-3">
         <div class="d-flex justify-content-between">
           <label for="password" class="form-label">Confirm Password</label>
         </div>
-        <input
-        [(ngModel)]="confirmPassword"
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Enter your password"
-      />
+        <input type="password" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" class="form-control" placeholder="Confirm Password" required />
       </div>
 
       <!-- Submit Button -->

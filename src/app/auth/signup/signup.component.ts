@@ -34,44 +34,40 @@ export class SignupComponent {
   }
 }
 */
-import { Component,  } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
-import { NgZone } from '@angular/core'; //NgZone for zone management
+//import { NgZone } from '@angular/core'; //NgZone for zone management
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.css'], 
-  imports: [FormsModule],
+  imports: [CommonModule,FormsModule],
 })
 export class SignupComponent {
   email: string = ''; // User email
   password: string = ''; // User password
   confirmPassword: string = '';
 
-  constructor(private auth: Auth, private ngZone: NgZone) {}
+  private auth: Auth = inject(Auth);
 
   signup() {
-    this.ngZone.runOutsideAngular(() => {
-      if (this.password !== this.confirmPassword) {
-        alert('Passwords do not match!');
-        return;
-      }
-      createUserWithEmailAndPassword(this.auth, this.email, this.password)
-        .then((userCredential) => {
-          this.ngZone.run(() => {
-            console.log('Signup successful:', userCredential);
-            alert('Signup successful!');
-          });
-        })
-        .catch((error) => {
-          this.ngZone.run(() => {
-            console.error('Signup error:', error);
-            alert('Signup failed: ' + error.message);
-          });
-        });
-    });
+    if (this.password !== this.confirmPassword) {
+      alert('Passwords do not match!');
+      return;
+    }
+
+    createUserWithEmailAndPassword(this.auth, this.email, this.password)
+      .then((userCredential) => {
+        console.log('Signup successful:', userCredential);
+        alert('Signup Successful! Please log in.');
+      })
+      .catch((error) => {
+        console.error('Signup failed:', error.message);
+        alert('Signup Failed: ' + error.message);
+      });
   }
 }

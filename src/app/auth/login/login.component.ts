@@ -13,7 +13,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  constructor(private auth: Auth) {}
+  private auth: Auth = inject(Auth);
   login() {
     
 
