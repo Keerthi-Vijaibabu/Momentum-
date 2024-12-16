@@ -9,7 +9,7 @@ import { Router, RouterOutlet, RouterLink } from '@angular/router';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent {
-  userName: string = 'User'; // You can dynamically load this after login
+  userName: string = 'User'; //dynamically load this after login
 
   constructor(private router: Router) {}
 

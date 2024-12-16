@@ -1,6 +1,23 @@
-<div class="timer-container" style = "margin-top: 60px;">
+<div class="dflex">
+<nav class="bg-dark text-light p-3 sidebar">
+  <h2 class="fw-bold text-light mb-4">Momentum</h2>
+  <ul class="nav flex-column">
+    <li class="nav-item mb-3">
+      <a class="nav-link text-light" routerLink ="#">TASK</a>
+    </li>
+    <li class="nav-item mb-3">
+      <a class="nav-link text-light" routerLink = '/timer'>POMODORO TIMER</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" href="#">PRODUCTIVITY STATS</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="timer-container" >
   <!-- Tab Navigation -->
-  <div class="timer-tabs d-flex justify-content-center">
+   <div style = "margin-top: 60px;">
+  <div class="timer-tabs d-flex justify-content-center" >
     <button
       class="tab-btn"
       [class.active]="currentMode === 'pomodoro'"
@@ -41,4 +58,6 @@
     <p class="task-number">#{{ taskNumber }}</p>
     <p class="task-name">{{ taskName }}</p>
   </div>
+</div>
+</div>
 </div>

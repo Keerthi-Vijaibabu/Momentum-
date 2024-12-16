@@ -1,1 +1,52 @@
-<p>tasks works!</p>
+<div class="task-container">
+    <!-- Header Section -->
+    <h2 class="header">Project Planner</h2>
+    <p class="sub-header">
+      Use this template to keep track of all your projects and their tasks. Open up
+      each project’s toggle <span class="icon">▶</span> to view the sub-tasks.
+    </p>
+  
+    <!-- Task Table -->
+    <table class="task-table">
+      <!-- Table Header -->
+      <thead>
+        <tr>
+          <th>Status</th>
+          <th>Project</th>
+          <th>Deadline</th>
+          <th>Priority</th>
+          <th>AI Keywords</th>
+        </tr>
+      </thead>
+      <!-- Table Body -->
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <!-- Task Status -->
+          <td>
+            <span class="status" [ngClass]="getStatusClass(task.status)">
+              {{ task.status }}
+            </span>
+          </td>
+          <!-- Task Project -->
+          <td>
+            <span class="project-name">{{ task.project }}</span>
+          </td>
+          <!-- Task Deadline -->
+          <td>{{ task.deadline || '—' }}</td>
+          <!-- Task Priority -->
+          <td>
+            <span class="priority" [ngClass]="getPriorityClass(task.priority)">
+              {{ task.priority }}
+            </span>
+          </td>
+          <!-- AI Keywords -->
+          <td>
+            <span *ngFor="let keyword of task.keywords" class="keyword">
+              {{ keyword }}
+            </span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
