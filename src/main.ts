@@ -29,10 +29,15 @@ import { environment } from './environments/environment';
 import { provideRouter } from '@angular/router';
 import { routes } from './app/app.routes';
 
+//Firestore
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+
 bootstrapApplication(AppComponent, {
   providers: [
-    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-    provideAuth(() => getAuth()), // Ensure Auth is provided
-    provideRouter(routes)
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),//Firebase configuration
+    provideAuth(() => getAuth()), // Auth is provided
+    provideRouter(routes),
+    provideFirestore(() => getFirestore()),//Firestore configuration
+    
   ],
 }).catch(err => console.error(err));

@@ -1,48 +1,37 @@
+<nav class="bg-dark text-light p-3 sidebar">
+    <h2 class="fw-bold text-light mb-4">Momentum</h2>
+    <ul class="nav flex-column">
+      <li class="nav-item mb-3">
+        <a class="nav-link text-light" routerLink ='/task'>TASK</a>
+      </li>
+      <li class="nav-item mb-3">
+        <a class="nav-link text-light" routerLink = '/timer'>POMODORO TIMER</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="#">PRODUCTIVITY STATS</a>
+      </li>
+    </ul>
+  </nav>
+
 <div class="task-container">
-    <!-- Header Section -->
-    <h2 class="header">Project Planner</h2>
-    <p class="sub-header">
-      Use this template to keep track of all your projects and their tasks. Open up
-      each project’s toggle <span class="icon">▶</span> to view the sub-tasks.
-    </p>
-  
-    <!-- Task Table -->
+    <div class="header">Your Tasks</div>
     <table class="task-table">
-      <!-- Table Header -->
       <thead>
         <tr>
           <th>Status</th>
           <th>Project</th>
-          <th>Deadline</th>
-          <th>Priority</th>
-          <th>AI Keywords</th>
+          <th>Priority</th> 
         </tr>
       </thead>
-      <!-- Table Body -->
       <tbody>
-        <tr *ngFor="let task of tasks">
-          <!-- Task Status -->
+        <tr *ngFor="let task of tasks$ | async">
           <td>
-            <span class="status" [ngClass]="getStatusClass(task.status)">
-              {{ task.status }}
-            </span>
+            <span class="status status-not-started">{{ task.status }}</span>
           </td>
-          <!-- Task Project -->
-          <td>
-            <span class="project-name">{{ task.project }}</span>
-          </td>
-          <!-- Task Deadline -->
-          <td>{{ task.deadline || '—' }}</td>
-          <!-- Task Priority -->
+          <td class="project-name">{{ task.name }}</td>
           <td>
             <span class="priority" [ngClass]="getPriorityClass(task.priority)">
               {{ task.priority }}
-            </span>
-          </td>
-          <!-- AI Keywords -->
-          <td>
-            <span *ngFor="let keyword of task.keywords" class="keyword">
-              {{ keyword }}
             </span>
           </td>
         </tr>

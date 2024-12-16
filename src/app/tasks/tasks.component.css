@@ -96,4 +96,8 @@
     color: #4da3ff;
     cursor: pointer;
   }
-  
+  .sidebar {
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+  }

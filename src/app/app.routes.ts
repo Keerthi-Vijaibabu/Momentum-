@@ -4,6 +4,8 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from '../app/home/home.component';
 import { TimerComponent } from './timer/timer.component';
 import { MainComponent } from './main/main.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { AuthGuard } from '../app/auth/auth.gaurd';
 
 export const routes: Routes = [
     { path: 'home', component: HomeComponent },
@@ -11,5 +13,9 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   {path:'timer', component: TimerComponent},
-  {path:'main', component: MainComponent},
+  {path:'task', component:TasksComponent},
+  {path:'main', component: MainComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '' },
 ];
+
+
